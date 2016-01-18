@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="RootApp">
 <head>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="angular-material/angular-material.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
 </head>
-    <body ng-app="RootApp">
+    <body ng-controller="MainCtrl" ng-cloak>
 
-    <div ng-controller="AppCtrl" ng-cloak>
+    <!-- <div ng-controller="AppCtrl" ng-cloak> -->
+    <div>
     	<md-toolbar>
-    		<div class="md-toolbar-tools">
+    		<div class="md-toolbar-tools" >
 	    		<md-button class="md-icon-button" aria-label="Settings" ng-click="openLeftMenu()">
-	    			<md-icon md-svg-icon="icons/ic_menu_black_24px.svg"></md-icon>
+<!-- 	    		<md-button class="md-icon-button" aria-label="Settings" ng-click="toggle()"> -->
+                    <md-icon md-svg-icon="icons/ic_menu_black_24px.svg"></md-icon>
 	    		</md-button>
-    			<h2><span>Home Page</span></h2>
+    			<md-button ng-href="#home"><h2><span>Home Page</span></h2></md-button>
     			<span flex></span>
     			<md-button class="md-icon-button" aria-label="Github">
     				<!--TODO:  INSERT GITHUB ICON HERE -->
@@ -23,25 +26,41 @@
     			</md-button>
     		</div>
     	</md-toolbar>
+        <div id="sidenav-left" >
     	<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
     		<md-content> 
     			<h1>This is the left-side nav!</h1>
     			<md-list>
-    				<md-list-item class="md-1-line" ng-repeat="item in sidebarTopics">
+    				<md-list-item class="md-1-line" >
     					<div class="md-list-item-text">
     						<!-- <md-button ng-href="{{item.link}}">{{item.name}}</md-button> -->
-    						<a ng-href="#/{{item.link}}">{{item.name}}</a>
+    						<!-- <a ng-href="#/{{item.link}}">{{item.name}}</a> -->
+                            <md-button ng-href="#about">About Me</md-button>
     					</div>
     				</md-list-item>
+                    <md-list-item class="md-1-line">
+                        <div class="md-list-item-text">
+                            <md-button href="#projects">Projects</md-button>
+                        </div>
+                    </md-list-item>
+                    <md-list-item class="md-1-line">
+                        <div class="md-list-item-text">
+                            <md-button href="#contact">Contact</md-button>
+                        </div>
+                    </md-list-item>
+                    <md-list-item class="md-1-line">
+                        <div class="md-list-item-text">
+                            <md-button href="#fun-stuff">Fun Stuff</md-button>
+                        </div>
+                    </md-list-item>
     			</md-list>
     		</md-content>
     	</md-sidenav>
+        </div>
 
-    	<div ng-view>
-    	<!-- Business will take place here -->
-    	</div>
+    	<div ng-view></div>
     	<md-content> 
-    		<h1>Hello World!</h1>
+
     	</md-content>
     </div>
 
@@ -58,6 +77,7 @@
     <!-- My scripts -->
     <script src="/main.js"></script>
     <script src="/github.js"></script>
+    <script src="/controllers.js"></script>
 
 </body>
 </html>
