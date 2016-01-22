@@ -3,8 +3,9 @@ var websiteControllers = angular.module('websiteControllers', ['ngMaterial']);
 
 
 websiteControllers.controller('homeController', function($scope, $mdSidenav){
-	$scope.openLeftMenu = function(){
-		$mdSidenav('left').toggle();
+
+	$scope.callOpenLeftMenu = function(){
+		openLeftMenu();
 	};
 
 	// $scope.sidebarTopics =[{
@@ -27,6 +28,9 @@ websiteControllers.controller('aboutController', function($scope, $mdSidenav){
 	$scope.openLeftMenu = function(){
 		$mdSidenav('left').toggle();
 	};
+	$scope.callOpenLeftMenu = function(){
+		openLeftMenu();
+	};
 });
 
 
@@ -34,7 +38,9 @@ websiteControllers.controller('projectsController', function($scope, $mdSidenav)
 	$scope.openLeftMenu = function(){
 		$mdSidenav('left').toggle();
 	};
-
+	$scope.callOpenLeftMenu = function(){
+		openLeftMenu();
+	};
 
 });
 
@@ -42,12 +48,17 @@ websiteControllers.controller('contactController', function($scope, $mdSidenav){
 	$scope.openLeftMenu = function(){
 		$mdSidenav('left').toggle();
 	};
-
+	$scope.callOpenLeftMenu = function(){
+		openLeftMenu();
+	};
 });
 
 websiteControllers.controller('funStuffController', function($scope, $mdSidenav){
 	$scope.openLeftMenu = function(){
 		$mdSidenav('left').toggle();
+	};
+	$scope.callOpenLeftMenu = function(){
+		openLeftMenu();
 	};
 });
 

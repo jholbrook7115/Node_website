@@ -8,6 +8,7 @@ app.use(express.static(__dirname + '/node_modules'));
 app.use(express.static(__dirname + '/images'));
 app.use(express.static(__dirname + '/templates'));
 app.use(express.static(__dirname + '/js'));
+app.use(express.static(__dirname + '/css'));
 
 app.get('/', function(req, res){
 	console.log('GET request for /  ... serving ' + __dirname + '\\index.html');
