@@ -8,6 +8,16 @@ websiteControllers.controller('homeController', function($scope, $mdSidenav){
 		openLeftMenu();
 	};
 
+	$scope.homeOptions = [{
+		title: 'About Me',
+		description: 'Learn more about me and who I am!',
+		link: '#about'
+	},{
+		title: 'Projects',
+		description: '',
+		link: ''
+	}];
+
 	// $scope.sidebarTopics =[{
 	// 	name: 'About Me',
 	// 	link: '/about'	

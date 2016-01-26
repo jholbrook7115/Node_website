@@ -1,5 +1,4 @@
-        
-var app = angular.module( 'RootApp', [ 'ngMaterial', 'ngRoute', 'websiteControllers' ] );
+p = angular.module( 'RootApp', [ 'ngMaterial', 'ngRoute', 'websiteControllers' ] );
 
 	app.config(function($routeProvider){
 	$routeProvider
@@ -31,9 +30,9 @@ var app = angular.module( 'RootApp', [ 'ngMaterial', 'ngRoute', 'websiteControll
 //global constants
 app.constant('sidebarObjects', [{
 		name: 'About Me',
-		link: '#about'	
+		link: '#about'
 	},{
-		name: 'Projects',
+	name: 'Projects',
 		link: '#projects'
 	}, {
 		name: 'Contact Info',
@@ -45,19 +44,23 @@ app.constant('sidebarObjects', [{
 );
 
 app.controller('MainCtrl', function($scope, $mdSidenav){
-	
-	$scope.sidebarObjects = [{
+
+	$scopesidebarObjects = [{
 		name: 'About Me',
-		link: '#about'	
+		link: '#about',
+		description: 'Information about me'
 	},{
-		name: 'Projects',
-		link: '#projects'
+		ame: 'Projects',
+		link: '#projects',
+		description: 'Projects I have worked on'
 	}, {
 		name: 'Contact Info',
-		link: '#contact'
+		link: '#contact',
+		description: 'Want to contact me?  Here\'s how!'
 	}, {
 		name: 'Fun Stuff',
-		link: '#fun-stuff'
+		link: '#fun-stuff',
+		description: 'Things just for fun!'
 	}];
 
 	$scope.openLeftMenu = function(){

@@ -8,9 +8,6 @@
     
 </head>
     <body ng-controller="MainCtrl" ng-cloak flex>
-
-    <!-- <div ng-controller="AppCtrl" ng-cloak> -->
-    
     	<md-toolbar>
     		<div class="md-toolbar-tools">
 	    		<md-button class="md-icon-button" aria-label="Settings" ng-click="openLeftMenu()">
@@ -18,7 +15,6 @@
                     <md-icon md-svg-icon="icons/ic_menu_black_24px.svg"></md-icon>
 	    		</md-button>
     			<md-button ng-href="#/"><h2><span>Home Page</span></h2></md-button>
-    			<span flex></span>
     			<md-button class="md-icon-button" aria-label="Github">
     				<!--TODO:  INSERT GITHUB ICON HERE -->
     			</md-button>
@@ -27,48 +23,20 @@
     			</md-button>
     		</div>
     	</md-toolbar>
-    	
 	    <div layout="row" flex>
 	    	<div layout="column" style="height: 100vh;">
 		    	<md-sidenav class="md-sidenav-left md-whiteframe-z2 sidebar-fixed" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" flex>
-		    		<md-content> 
+		    		<md-content>
 		    			<md-list>
 		    				<md-list-item class="md-1-line" ng-repeat="item in sidebarObjects">
 		    					<div class="md-list-item-text">
 		    						<md-button ng-href="{{item.link}}">{{item.name}}</md-button>
-		    						<!-- <a ng-href="#/{{item.link}}">{{item.name}}</a> -->
-		                            <!-- <md-button ng-href="#about">About Me</md-button> -->
 		    					</div>
 		    				</md-list-item>
-<!-- 		                    <md-list-item class="md-1-line">
-		                        <div class="md-list-item-text">
-		                            <md-button href="#projects">Projects</md-button>
-		                        </div>
-		                    </md-list-item>
-		                    <md-list-item class="md-1-line">
-		                        <div class="md-list-item-text">
-		                            <md-button href="#contact">Contact</md-button>
-		                        </div>
-		                    </md-list-item>
-		                    <md-list-item class="md-1-line">
-		                        <div class="md-list-item-text">
-		                            <md-button href="#fun-stuff">Fun Stuff</md-button>
-		                        </div>
-		                    </md-list-item>
-		                    <md-list-item class="md-1-line" layout-align="end end">
-		                    	<div class="md-list-item-text">
-		                            <md-button href="#fun-stuff">Fun Stuff</md-button>
-		                        </div>
-		                    </md-list-item> -->
 		    			</md-list>
-		    			
-		    		</md-content>
-		    		<md-content layout-align="end end">
-		    			im empty
 		    		</md-content>
 	    	</md-sidenav>
-	    	</div>
-	    	
+	    	</div>	    	
 	    <div class="content-container">
     		<div ng-view></div>
     	</div>
