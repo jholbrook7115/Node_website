@@ -76,8 +76,16 @@ websiteControllers.controller('projectsController', function($scope, $mdSidenav,
 		$scope.data = response.data || "Request Failed";
 		$scope.response = response.status;
 	}
-
-
+        $scope.predicate = 'name';
+        $scope.reverse = false;
+        $scope.order = function(predicate, shouldReverse){
+            $scope.predicate = predicate;
+            if(shouldReverse !== 'no'){
+                $scope.reverse = true;
+            } else {
+                $scope.reverse = false;
+            }
+        };
 });
 
 websiteControllers.controller('contactController', function($scope, $mdSidenav){
