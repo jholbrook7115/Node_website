@@ -58,13 +58,25 @@ websiteControllers.controller('aboutController', function($scope, $mdSidenav){
 });
 
 
-websiteControllers.controller('projectsController', function($scope, $mdSidenav){
+websiteControllers.controller('projectsController', function($scope, $mdSidenav, $http){
 	$scope.openLeftMenu = function(){
 		$mdSidenav('left').toggle();
 	};
 	$scope.callOpenLeftMenu = function(){
 		openLeftMenu();
 	};
+
+	$http({
+		url: 'https://api.github.com/users/jholbrook7115/repos',
+		method: 'GET'
+	}).then(function(response){
+		$scope.status = response.status;
+		$scope.data = response.data;
+	}), function(response){
+		$scope.data = response.data || "Request Failed";
+		$scope.response = response.status;
+	}
+
 
 });
 

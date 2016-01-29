@@ -1,3 +1,25 @@
 <md-content>
 	<md-buttun>Projects Text</md-buttun>
+
+
+	<md-card ng-repeat="repo in data">
+		<md-card-title>
+			<md-card-title-text> 
+				<span class="md-headline">{{repo.name}}</span>
+				<span class="md-subhead">Last Updated: {{repo.updated_at}}</span>
+			</md-card-title-text>
+
+		</md-card-title>
+		<md-card-content>
+			{{}}
+		</md-card-content>
+
+		<md-card-action>
+			<md-button ng-href="https://github.com/{{repo.full_name}}">View on Github</md-button>
+			<md-button ng-href=""></md-button>
+		</md-card-action>
+
+
+
+	</md-card>
 </md-content>
