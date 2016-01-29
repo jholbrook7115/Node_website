@@ -10,12 +10,20 @@ websiteControllers.controller('homeController', function($scope, $mdSidenav){
 
 	$scope.homeOptions = [{
 		title: 'About Me',
-		description: 'Learn more about me and who I am!',
+		description: 'Learn more about me and who I am',
 		link: '#about'
 	},{
 		title: 'Projects',
-		description: '',
-		link: ''
+		description: 'See some of the projects I have worked on',
+		link: '#projects'
+	},{
+		title: 'Contact Info',
+		description: 'How to contact me',
+		link: '#contact'
+	},{
+		title: 'Fun Stuff',
+		description: 'A place for some of my experimental stuff',
+		link: '#fun-stuff'
 	}];
 
 	// $scope.sidebarTopics =[{
@@ -35,12 +43,18 @@ websiteControllers.controller('homeController', function($scope, $mdSidenav){
 
 
 websiteControllers.controller('aboutController', function($scope, $mdSidenav){
+	var shortHtml = ""
+
 	$scope.openLeftMenu = function(){
 		$mdSidenav('left').toggle();
 	};
 	$scope.callOpenLeftMenu = function(){
 		openLeftMenu();
 	};
+
+	$scope.html = function(){
+
+	}
 });
 
 

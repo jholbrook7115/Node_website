@@ -1,4 +1,4 @@
-p = angular.module( 'RootApp', [ 'ngMaterial', 'ngRoute', 'websiteControllers' ] );
+var app = angular.module( 'RootApp', [ 'ngMaterial', 'ngRoute', 'websiteControllers' ] );
 
 	app.config(function($routeProvider){
 	$routeProvider
@@ -45,12 +45,12 @@ app.constant('sidebarObjects', [{
 
 app.controller('MainCtrl', function($scope, $mdSidenav){
 
-	$scopesidebarObjects = [{
+	$scope.sidebarObjects = [{
 		name: 'About Me',
 		link: '#about',
 		description: 'Information about me'
 	},{
-		ame: 'Projects',
+		name: 'Projects',
 		link: '#projects',
 		description: 'Projects I have worked on'
 	}, {
