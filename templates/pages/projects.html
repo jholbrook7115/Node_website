@@ -7,11 +7,11 @@
             <md-button ng-click="order('name', 'no')">Name</md-button>
             
             <md-input-container>
-                <label>Search</label>
-                <input ng-model="search_text" ng-change="search()">
+            <label>Search</label>
+                <input  ng-model="searchText">
             </md-input-container>
         <div>
-	<md-card ng-repeat="repo in data | orderBy:predicate:reverse">
+	<md-card ng-repeat="repo in data | filter:searchText">
 		<md-card-title>
 			<md-card-title-text> 
 				<span class="md-headline">{{repo.name}}</span>
