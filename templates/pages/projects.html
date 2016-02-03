@@ -1,10 +1,15 @@
 <md-content layout="column">
-	<md-button>Projects Text</md-button>
-    
+	<h1>My Projects</h1>
+        
         <div>
             <span>Sort By:</span>
             <md-button ng-click="order('updated_at', 'yes')">Latest Commit</md-button>
             <md-button ng-click="order('name', 'no')">Name</md-button>
+            
+            <md-input-container>
+                <label>Search</label>
+                <input ng-model="search_text" ng-change="search()">
+            </md-input-container>
         <div>
 	<md-card ng-repeat="repo in data | orderBy:predicate:reverse">
 		<md-card-title>
@@ -15,12 +20,12 @@
 
 		</md-card-title>
 		<md-card-content>
-                    <span>{{predicate}}</span>
+                    <p>{{repo.description}}</p>
                 <!--Add content from READ_ME.md files? -->
 		</md-card-content>
                     
 		<md-card-action>
-			<md-button ng-href="https://github.com/{{repo.full_name}}">View on Github</md-button>
+			<md-button ng-href="{{repo.html_url}}">View on Github</md-button>
 			<md-button ng-href=""></md-button>
 		</md-card-action>
 

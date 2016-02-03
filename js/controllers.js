@@ -25,20 +25,6 @@ websiteControllers.controller('homeController', function($scope, $mdSidenav){
 		description: 'A place for some of my experimental stuff',
 		link: '#fun-stuff'
 	}];
-
-	// $scope.sidebarTopics =[{
-	// 	name: 'About Me',
-	// 	link: '/about'	
-	// },{
-	// 	name: 'Projects',
-	// 	link: '/projects'
-	// }, {
-	// 	name: 'Contact Info',
-	// 	link: '/contact'
-	// }, {
-	// 	name: 'Fun Stuff',
-	// 	link: '/fun-stuff'
-	// }];
 });
 
 
@@ -58,7 +44,7 @@ websiteControllers.controller('aboutController', function($scope, $mdSidenav){
 });
 
 
-websiteControllers.controller('projectsController', function($scope, $mdSidenav, $http){
+websiteControllers.controller('projectsController', function($scope, $mdSidenav, $http, $filter){
 	$scope.openLeftMenu = function(){
 		$mdSidenav('left').toggle();
 	};
@@ -85,6 +71,11 @@ websiteControllers.controller('projectsController', function($scope, $mdSidenav,
             } else {
                 $scope.reverse = false;
             }
+        };
+
+        $scope.search_text;
+        $scope.search = function(){
+            //var found = $filter(search_text)($scope.data
         };
 });
 
