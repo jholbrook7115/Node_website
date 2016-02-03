@@ -50,7 +50,7 @@ app.controller('MainCtrl', function($scope, $mdSidenav){
 		link: '#about',
 		description: 'Information about me'
 	},{
-		ame: 'Projects',
+		name: 'Projects',
 		link: '#projects',
 		description: 'Projects I have worked on'
 	}, {

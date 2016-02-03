@@ -15,3 +15,18 @@ a {
 .content-container > * {
 	margin: 1% auto;
 }
+
+#home-page-cards-container > md-card > md-card-title > md-card-title-text > *  {
+	text-align: center;
+
+}
+
+#home-page-cards-container > md-card > md-card-action > a {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+span.md-headline {
+	text-align: center top;
+
+}

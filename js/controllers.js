@@ -10,41 +10,41 @@ websiteControllers.controller('homeController', function($scope, $mdSidenav){
 
 	$scope.homeOptions = [{
 		title: 'About Me',
-		description: 'Learn more about me and who I am!',
+		description: 'Learn more about me and who I am',
 		link: '#about'
 	},{
 		title: 'Projects',
-		description: '',
-		link: ''
+		description: 'See some of the projects I have worked on',
+		link: '#projects'
+	},{
+		title: 'Contact Info',
+		description: 'How to contact me',
+		link: '#contact'
+	},{
+		title: 'Fun Stuff',
+		description: 'A place for some of my experimental stuff',
+		link: '#fun-stuff'
 	}];
-
-	// $scope.sidebarTopics =[{
-	// 	name: 'About Me',
-	// 	link: '/about'	
-	// },{
-	// 	name: 'Projects',
-	// 	link: '/projects'
-	// }, {
-	// 	name: 'Contact Info',
-	// 	link: '/contact'
-	// }, {
-	// 	name: 'Fun Stuff',
-	// 	link: '/fun-stuff'
-	// }];
 });
 
 
 websiteControllers.controller('aboutController', function($scope, $mdSidenav){
+	var shortHtml = ""
+
 	$scope.openLeftMenu = function(){
 		$mdSidenav('left').toggle();
 	};
 	$scope.callOpenLeftMenu = function(){
 		openLeftMenu();
 	};
+
+	$scope.html = function(){
+
+	}
 });
 
 
-websiteControllers.controller('projectsController', function($scope, $mdSidenav){
+websiteControllers.controller('projectsController', function($scope, $mdSidenav, $http, $filter){
 	$scope.openLeftMenu = function(){
 		$mdSidenav('left').toggle();
 	};
@@ -52,6 +52,31 @@ websiteControllers.controller('projectsController', function($scope, $mdSidenav)
 		openLeftMenu();
 	};
 
+	$http({
+		url: 'https://api.github.com/users/jholbrook7115/repos',
+		method: 'GET'
+	}).then(function(response){
+		$scope.status = response.status;
+		$scope.data = response.data;
+	}), function(response){
+		$scope.data = response.data || "Request Failed";
+		$scope.response = response.status;
+	}
+        $scope.predicate = 'name';
+        $scope.reverse = false;
+        $scope.order = function(predicate, shouldReverse){
+            $scope.predicate = predicate;
+            if(shouldReverse !== 'no'){
+                $scope.reverse = true;
+            } else {
+                $scope.reverse = false;
+            }
+        };
+
+        $scope.search_text;
+        $scope.search = function(){
+            //var found = $filter(search_text)($scope.data
+        };
 });
 
 websiteControllers.controller('contactController', function($scope, $mdSidenav){

@@ -1,33 +1,24 @@
-<!--home.html-->
-
 <md-content flex layout-fill>
 	
 	<div layout="column" layout-fill layout-align="top center">
-		<md-content class="md-padding" layout="row" layout-wrap layout-align="center start" layout-xs="column">
-			<h1>Hotline Bling</h1>
-			
-			<img src="">
+		<md-content class="md-padding" layout="column" layout-wrap layout-align="center start" layout-xs="column">
+			<h1></h1>
 
-
-			<div flex="50" flex-sm="100" flex-xs="100" layout="row">
-				<md-card ng-repeat="card in sidebarObjects">
+			<div id="home-page-cards-container" flex="150" flex-sm="100" flex-xs="100" layout="row">
+				<md-card ng-repeat="card in homeOptions">
 					<md-card-title>
 						<md-card-title-text>
-							<span class="md-headline">{{card.name}}</span>
-							<span class="md-subhead">{{card.description}}</span>
+							<span class="md-headline">{{card.title}}</span>
 						</md-card-title-text>
 					</md-card-title>
 					<md-card-content>
-						<!-- Do i need this??? -->
-
+						{{card.description}}
 					</md-card-content>
 					<md-card-action layout="row">
-						<md-button ng-href="{{card.link}"}>GoTo</md-button>
+						<md-button ng-href="{{card.link}}">GoTo</md-button>
 					</md-card-action>
 				</md-card>
 			</div>
-		
-
 		</md-content>
 	</div>
 </md-content>
