@@ -11,7 +11,7 @@
                 <input  ng-model="searchText">
             </md-input-container>
         <div>
-	<md-card ng-repeat="repo in data | filter:searchText">
+	<md-card ng-repeat="repo in data | filter:searchText:strict | orderBy: predicate : reverse">
 		<md-card-title>
 			<md-card-title-text> 
 				<span class="md-headline">{{repo.name}}</span>

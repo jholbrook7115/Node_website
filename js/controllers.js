@@ -73,8 +73,9 @@ websiteControllers.controller('projectsController', function($scope, $mdSidenav,
             }
         };
 
-        $scope.search_text;
-        $scope.search = function(){
+        $scope.searchText;
+        $scope.search = function(element){
+        	return element.name.match($searchText);
             //var found = $filter(search_text)($scope.data
         };
 });
