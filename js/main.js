@@ -32,7 +32,7 @@ app.constant('sidebarObjects', [{
 		name: 'About Me',
 		link: '#about'
 	},{
-	name: 'Projects',
+		name: 'Projects',
 		link: '#projects'
 	}, {
 		name: 'Contact Info',

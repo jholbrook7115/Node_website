@@ -25,20 +25,6 @@ websiteControllers.controller('homeController', function($scope, $mdSidenav){
 		description: 'A place for some of my experimental stuff',
 		link: '#fun-stuff'
 	}];
-
-	// $scope.sidebarTopics =[{
-	// 	name: 'About Me',
-	// 	link: '/about'	
-	// },{
-	// 	name: 'Projects',
-	// 	link: '/projects'
-	// }, {
-	// 	name: 'Contact Info',
-	// 	link: '/contact'
-	// }, {
-	// 	name: 'Fun Stuff',
-	// 	link: '/fun-stuff'
-	// }];
 });
 
 
@@ -58,7 +44,7 @@ websiteControllers.controller('aboutController', function($scope, $mdSidenav){
 });
 
 
-websiteControllers.controller('projectsController', function($scope, $mdSidenav, $http){
+websiteControllers.controller('projectsController', function($scope, $mdSidenav, $http, $filter){
 	$scope.openLeftMenu = function(){
 		$mdSidenav('left').toggle();
 	};
@@ -76,17 +62,34 @@ websiteControllers.controller('projectsController', function($scope, $mdSidenav,
 		$scope.data = response.data || "Request Failed";
 		$scope.response = response.status;
 	}
+        $scope.predicate = 'name';
+        $scope.reverse = false;
+        $scope.order = function(predicate, shouldReverse){
+            $scope.predicate = predicate;
+            if(shouldReverse !== 'no'){
+                $scope.reverse = true;
+            } else {
+                $scope.reverse = false;
+            }
+        };
 
-
+        // $scope.searchText = element(by.model('searchText'));
+        // $scope.search = function(element){
+        	
+        // 	return element.name.match($searchText);
+        //     //var found = $filter(search_text)($scope.data
+        // };
 });
 
 websiteControllers.controller('contactController', function($scope, $mdSidenav){
-	$scope.openLeftMenu = function(){
-		$mdSidenav('left').toggle();
-	};
-	$scope.callOpenLeftMenu = function(){
-		openLeftMenu();
-	};
+
+	$scope.contactInfo = {
+		name: 'Jefferson Holbrook',
+		phone: '484-639-2039',
+		email: 'holbrook.jefferson@gmail.com',
+		github: 'github.com/jholbrook7115',
+		linkedin: ''
+	}
 });
 
 websiteControllers.controller('funStuffController', function($scope, $mdSidenav){
