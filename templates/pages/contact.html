@@ -1,3 +1,7 @@
-<md-content>
-	<md-buttun>Contact Text</md-buttun>
+<md-content layout-padding>
+	
+	<div layout-align="center center">
+		<span ng-repeat="(key, value) in contactInfo">{{key}}: {{value}} <br></span>
+	</div>
+
 </md-content>

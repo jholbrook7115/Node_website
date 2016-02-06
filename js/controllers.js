@@ -73,20 +73,23 @@ websiteControllers.controller('projectsController', function($scope, $mdSidenav,
             }
         };
 
-        $scope.searchText;
-        $scope.search = function(element){
-        	return element.name.match($searchText);
-            //var found = $filter(search_text)($scope.data
-        };
+        // $scope.searchText = element(by.model('searchText'));
+        // $scope.search = function(element){
+        	
+        // 	return element.name.match($searchText);
+        //     //var found = $filter(search_text)($scope.data
+        // };
 });
 
 websiteControllers.controller('contactController', function($scope, $mdSidenav){
-	$scope.openLeftMenu = function(){
-		$mdSidenav('left').toggle();
-	};
-	$scope.callOpenLeftMenu = function(){
-		openLeftMenu();
-	};
+
+	$scope.contactInfo = {
+		name: 'Jefferson Holbrook',
+		phone: '484-639-2039',
+		email: 'holbrook.jefferson@gmail.com',
+		github: 'github.com/jholbrook7115',
+		linkedin: ''
+	}
 });
 
 websiteControllers.controller('funStuffController', function($scope, $mdSidenav){

@@ -17,8 +17,16 @@ app.get('/', function(req, res){
 });
 
 app.get('/download/resume', function(req, res){
-	var dlPath = path.join(__dirname, '/files/jefferson-holbrook-Resume-jan-2016.doc')
+	var dlPath = path.join(__dirname, '/files/jefferson-holbrook-Resume-jan-2016.doc');
 	res.download(dlPath);
+});
+
+//Routes for fun-stuff projects
+
+app.use(express.static(__dirname + '/other-stuff/Cena.me'));
+app.get('/other-stuff/Cena.me/index.html', function(req, res){
+	var pth = path.join(__dirname, '/other-stuff/Cena.me/index.html');
+	res.sendFile(pth);
 });
 
 //Should probably move these into a subdirectory and staticly reference to it above.
