@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="LaserApp">
+<head>
+	<link rel="stylesheet" href="../../node_modules/angular-material/angular-material.css">
+
+	<style>
+	#rainbow {
+		min-height: 100vh;
+		min-width: 130vw;
+	}
+
+	#rainbow > * {
+		position: fixed;
+		top: 50%;
+	}
+
+	</style>
+</head>
+
+<body ng-controller="laserCtrl">
+
+	<div id="rainbow">
+		<md-progress-linear md-mode="indeterminate" layout-align="center center" ng-repeat="t in colorList track by $index"></md-progress-linear>
+	</div>
+
+	<script src="../../node_modules/angular/angular.js"></script>
+	<script src="../../node_modules/angular-aria/angular-aria.js"></script>
+	<script src="../../node_modules/angular-animate/angular-animate.js"></script>
+	<script src="../../node_modules/angular-material/angular-material.js"></script>
+	<script src="../../node_modules/angular-route/angular-route.js"></script>
+
+	<script src="laser-app.js"></script>
+</body>
+
+</html>
