@@ -10,6 +10,7 @@ a {
 
 .content-container {
 	width: 100vw;
+	
 }
 
 .content-container > * {
@@ -29,4 +30,21 @@ a {
 span.md-headline {
 	text-align: center top;
 
+}
+
+.site-sidenav {
+  background: #106CC8;
+}
+.site-sidenav md-content {
+  background: transparent;
+}
+.site-sidenav,
+.site-sidenav.md-locked-open-add-active,
+.site-sidenav.md-locked-open {
+  width:     272px;
+  min-width: 272px;
+  max-width: 272px;
+}
+.site-sidenav > * {
+  min-width: 218px;
 }
