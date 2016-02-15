@@ -5,13 +5,15 @@
     <link rel="stylesheet" href="angular-material/angular-material.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="/style.css">
-    
+
 </head>
-    <body ng-controller="MainCtrl" ng-cloak flex>
+<body layout="column" layout> 
+    <div layout="column" ng-controller="MainCtrl" ng-cloak flex layout>
+        
     	<md-toolbar>
     		<div class="md-toolbar-tools">
 	    		<md-button class="md-icon-button" aria-label="Settings" ng-click="openLeftMenu()">
-<!-- 	    		<md-button class="md-icon-button" aria-label="Settings" ng-click="toggle()"> -->
+
                     <md-icon md-svg-icon="icons/ic_menu_black_24px.svg"></md-icon>
 	    		</md-button>
     			<md-button ng-href="#/"><h2><span>Home Page</span></h2></md-button>
@@ -23,25 +25,28 @@
     			</md-button>
     		</div>
     	</md-toolbar>
-	    <div layout="row" flex>
-	    	<div layout="column" style="height: 100vh;">
-		    	<md-sidenav class="md-sidenav-left md-whiteframe-z2 sidebar-fixed" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" flex>
-		    		<md-content>
-		    			<md-list>
-		    				<md-list-item class="md-1-line" ng-repeat="item in sidebarObjects">
-		    					<div class="md-list-item-text">
-		    						<md-button ng-href="{{item.link}}">{{item.name}}</md-button>
-		    					</div>
-		    				</md-list-item>
-		    			</md-list>
-		    		</md-content>
-	    	</md-sidenav>
-	    	</div>	    	
-	    <div class="content-container">
-    		<div ng-view></div>
-    	</div>
+      
+	    <div layout="row" layout-fill flex>
+		    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" >
+		    	<md-content>
+		    		<md-list>
+		    			<md-list-item class="md-1-line" ng-repeat="item in sidebarObjects">
+		    				<div class="md-list-item-text">
+		    					<md-button ng-href="{{item.link}}">{{item.name}}</md-button>
+		    				</div>
+		    			</md-list-item>
+		    		</md-list>
+		    	</md-content>
+            </md-sidenav>
+            <div class="content-container" flex layout="column" layout-fill>
+                <div ng-view></div>
+            </div>
+        </div>
     </div>
+
+
     
+
     <!-- Angular Material scripts -->
     <script src="angular/angular.js"></script>
     <script src="angular-aria/angular-aria.js"></script>
@@ -49,13 +54,14 @@
     <script src="angular-material/angular-material.js"></script>
     <script src="angular-route/angular-route.js"></script>
 
-    <!-- JQuery CDN -->
-    <script src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js" type="text/javascript"></script>
-
     <!-- My scripts -->
-    <script src="/main.js"></script>
+    <script src="main.js"></script>
     <script src="/github.js"></script>
     <script src="/controllers.js"></script>
+
+    <!-- Other Stuff -->
+    <script src="verge/verge.min.js"></script>
+
 
 </body>
 </html>
