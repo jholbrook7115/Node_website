@@ -38,9 +38,7 @@ websiteControllers.controller('aboutController', function($scope, $mdSidenav){
 		openLeftMenu();
 	};
 
-	$scope.html = function(){
-
-	}
+	$scope.html = function(){};
 });
 
 
