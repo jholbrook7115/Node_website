@@ -1,30 +1,30 @@
 var app = angular.module( 'RootApp', [ 'ngMaterial', 'ngRoute', 'websiteControllers' ] );
 
-	app.config(function($routeProvider){
-	$routeProvider
-		.when('/', {
-			templateUrl: 'pages/home.html',
-			controller: 'homeController'
-		})
-		.when('/about', {
-			templateUrl: 'pages/about.html',
-			controller: 'aboutController'
-		})
-		.when('/projects', {
-			templateUrl: 'pages/projects.html',
-			controller: 'projectsController'
-		})
-		.when('/contact', {
-			templateUrl: 'pages/contact.html',
-			controller: 'contactController'
-		})
-		.when('/fun-stuff', {
-			templateUrl: 'pages/fun-stuff.html',
-			controller: 'funStuffController'
-		})
-		.otherwise({
-			redirectTo: '/'
-		});
+app.config(function($routeProvider){
+    $routeProvider
+	.when('/', {
+		templateUrl: 'pages/home.html',
+		controller: 'homeController'
+	})
+	.when('/about', {
+		templateUrl: 'pages/about.html',
+		controller: 'aboutController'
+	})
+	.when('/projects', {
+		templateUrl: 'pages/projects.html',
+		controller: 'projectsController'
+	})
+	.when('/contact', {
+		templateUrl: 'pages/contact.html',
+		controller: 'contactController'
+	})
+	.when('/fun-stuff', {
+		templateUrl: 'pages/fun-stuff.html',
+		controller: 'funStuffController'
+	})
+	.otherwise({
+		redirectTo: '/'
+	});
 });
 
 //global constants

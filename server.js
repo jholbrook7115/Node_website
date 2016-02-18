@@ -23,14 +23,19 @@ app.get('/download/resume', function(req, res){
 });
 
 //Routes for fun-stuff projects
-app.get('/other-stuff/Cena.me/index.html', function(req, res){
-	var pth = path.join(__dirname, '/other-stuff/Cena.me/index.html');
+app.get('/other-stuff/cena-me/index.html', function(req, res){
+	var pth = path.join(__dirname, '/other-stuff/cena-me/index.html');
 	res.sendFile(pth);
 });
 app.get('/other-stuff/lasers/lasers.html', function(req, res){
 	var pth = path.join(__dirname, '/other-stuff/lasers/lasers.html');
 	res.sendFile(pth);
 });
+app.get('other-stuff/maptest/gmaps.html', function(req, res){
+        var pth = path.join(__dirname, '/other-stuff/maptest/gmaps.html');
+        res.sendFile(pth);
+});
+
 
 var server = app.listen(8080, function(){
 	var host = server.address().address;
