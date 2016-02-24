@@ -22,6 +22,10 @@ app.config(function($routeProvider){
 		templateUrl: 'pages/fun-stuff.html',
 		controller: 'funStuffController'
 	})
+        .when('/documentation', {
+                templateUrl: 'pages/documentation.html',
+                controller: 'documentationController'
+        })
 	.otherwise({
 		redirectTo: '/'
 	});
@@ -34,10 +38,10 @@ app.constant('sidebarObjects', [{
 	},{
 		name: 'Projects',
 		link: '#projects'
-	}, {
+	},{
 		name: 'Contact Info',
 		link: '#contact'
-	}, {
+	},{
 		name: 'Fun Stuff',
 		link: '#fun-stuff'
 	}]
@@ -61,7 +65,11 @@ app.controller('MainCtrl', function($scope, $mdSidenav){
 		name: 'Fun Stuff',
 		link: '#fun-stuff',
 		description: 'Things just for fun!'
-	}];
+	},{
+                name: 'Documentation',
+                link: '#documentation',
+                description: 'Documentation that I find on the internet and I want to keep track of because I found it interesting'
+        }];
 
 	$scope.openLeftMenu = function(){
 		$mdSidenav('left').toggle();

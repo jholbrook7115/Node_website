@@ -1,0 +1,23 @@
+<md-content class="md-padding" layout-xs="column" layout="row">
+    <div flex-xs flex-gt-xs="100" layout="column"> 
+        <md-card ng-repeat="item in docList">
+            <md-card-title>
+                <md-card-title-text layout="row">
+                    <span flex></span>
+                    <md-button ng-href="{{item.link}}" layout-wrap>
+                        <span class="md-headline" layout-wrap>{{item.title}}</span>
+                    </md-button>
+                    <span flex></span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content layout-align="space-between">
+                <p>{{item.descr}}</p>
+                <md-card-actions layout="row">
+                    <md-button ng-href="{{item.link}}">
+                        {{item.source}}    
+                    </md-button>
+                </md-card-actions>
+            </md-card-content>
+        </md-card>
+    </div>
+</md-content>
