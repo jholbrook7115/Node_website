@@ -38,9 +38,7 @@ websiteControllers.controller('aboutController', function($scope, $mdSidenav){
 		openLeftMenu();
 	};
 
-	$scope.html = function(){
-
-	}
+	$scope.html = function(){};
 });
 
 
@@ -99,6 +97,24 @@ websiteControllers.controller('funStuffController', function($scope, $mdSidenav)
 	$scope.callOpenLeftMenu = function(){
 		openLeftMenu();
 	};
+});
+
+websiteControllers.controller('documentationController', function($scope){
+    $scope.docList = [{
+        title: 'Configuration Management Basics',
+        link: 'https://en.wikipedia.org/wiki/Configuration_management',
+        descr: 'Useful info about Configuration Management',
+        source: 'Wikipedia',
+        tags: [{topic: 'software design'},{topic: 'configuration management'}, {topic: 'management'}]
+
+    },{
+        title: 'Angular Material Design Website',
+        link: 'https://material.angularjs.or/latest',
+        descr: 'The reference that was useful to me when I was designing this site.  Well documented with demos for almost anything that you can find in this library',
+        source: 'AngularJS',
+        tags: [{topic: 'web development'}, {topic: 'web framework'}, {topic: 'angular'}, {topic: 'web'}]
+    }];
+
 });
 
 // function openLeftMenu(){

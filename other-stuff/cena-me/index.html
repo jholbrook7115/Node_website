@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Web audio testing</title>
+	<style>
+		* {
+
+			background-color: grey;
+		}
+
+		#theCena{
+			position: fixed;
+	        font-family: "Comic Sans MS";
+	        width: 370px;
+	        height: 340px;
+	        bottom: -250px;
+	        transition: bottom 10s ease;
+	        background-repeat: repeat-x;
+	        background-size: cover;
+	        background-image: url("cena2.png");    
+
+		}
+	</style>
+</head>
+<body onload="changeBottom()">
+	<script>
+		
+		function changeBottom() {
+			document.getElementById('theCena').style.bottom = '200px';
+
+		}
+
+		var context = new AudioContext();
+			
+		var source
+		function getData() {
+			source = context.createBufferSource();
+			var request = new XMLHttpRequest();
+
+			request.open('GET', './cena.mp3', true);
+			request.responseType = 'arraybuffer';
+			request.onload = function(){
+				var AudioDate = request.response;
+				context.decodeAudioData(AudioDate, function(b){
+					source.buffer = b;
+					source.connect(context.destination);// to speakers
+					source.loop = true;
+				}, function(e){"error! with data " + e.err});
+			}
+
+			request.send();
+		}
+
+		getData();
+		source.start(0);
+		
+	</script>
+
+	<div id='theCena'>
+		
+	</div>
+
+</body>
+</html>
