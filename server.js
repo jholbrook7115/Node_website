@@ -2,6 +2,8 @@ var express = require('express');
 var http = require("http");
 var path = require("path");
 
+var MongoClient = require('mongodb').MongoClient
+
 var app = express();
 
 app.use(express.static(__dirname + '/'));
@@ -35,6 +37,12 @@ app.get('other-stuff/maptest/gmaps.html', function(req, res){
         var pth = path.join(__dirname, '/other-stuff/maptest/gmaps.html');
         res.sendFile(pth);
 });
+app.get('other-stuff/mango-tomfoolery/messing-with-mangos.html", function(req, res){
+	var pth = path.join(__dirname, '/other-stuff/mango-tomfoolery/messing-with-mangos.html');
+	res.sendFile(pth);
+});
+
+
 
 
 var server = app.listen(8080, function(){

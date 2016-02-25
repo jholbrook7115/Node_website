@@ -14,6 +14,7 @@
     "angular-material": "^1.0.1",
     "angular-route": "^1.4.8",
     "express": "^4.13.3",
+    "mongodb": "^2.1.7",
     "ngmap": "^1.17.0",
     "require": "^2.4.20"
   },
